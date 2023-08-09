@@ -36,7 +36,7 @@ function buyLollipop() {
 
 function candysPerSecond() {
   if (lollipopCounter.innerHTML.length >= 10) {
-    candy += speed;
+    candy += lollipopCounter.innerHTML.length;
     candyCounter.innerHTML = candy.toString();
   }
 }
