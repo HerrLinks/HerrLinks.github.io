@@ -46,3 +46,12 @@ function candysPerSecond() {
 }
 
 setInterval(candysPerSecond, 1000);
+
+function candyRain() {
+  if (candyRainActive === false) {
+    candyRainActive = true;
+    setInterval(createCandy, 100);
+  }
+}
+
+candyRainButton.addEventListener('click', candyRain);
