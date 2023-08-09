@@ -24,6 +24,8 @@ function createCandy() {
   candyCounter.innerHTML = candy.toString();
 }
 
+createCandyButton.addEventListener('click', createCandy);
+
 function buyLollipop() {
   if (candy >= 100) {
     candy -= 100;
@@ -33,3 +35,5 @@ function buyLollipop() {
     speedCounter.innerHTML = speed.toString();
   }
 }
+
+buyLollipopButton.addEventListener('click', buyLollipop);
