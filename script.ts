@@ -16,30 +16,28 @@ const candyRainButton = document.querySelector('.candy-rain') as HTMLElement;
 
 const lollipopIcon = '🍭';
 
-let candy:number = 0;
+let candy: number = 0;
 let lollipop: number = 0;
-let speed: number = 0;
 let candyRainActive: boolean = false;
 
 function createCandy() {
-  candy++;
-  candyCounter.innerHTML = candy.toFixed(1);
+  candy += 1;
 }
 
 function buyLollipop() {
   if (candy >= 100) {
     candy -= 100;
-    candyCounter.innerHTML = candy.toFixed(1);
-    lollipop++;
-    lollipopCounter.innerHTML += lollipopIcon;
-    speed += 1;
-    speedCounter.innerHTML = speed.toString();
+    lollipop += 1;
   }
 }
 
 function candysPerSecond() {
-  candy += lollipop / 10;
+  let speed: number = lollipop / 10;
+  
+  candy += speed;
+  lollipopCounter.innerHTML = lollipopIcon.repeat(lollipop);
   candyCounter.innerHTML = candy.toFixed(1);
+  speedCounter.innerHTML = speed.toString();
 }
 
 function candyRain() {
