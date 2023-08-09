@@ -23,13 +23,13 @@ let candyRainActive: boolean = false;
 
 function createCandy() {
   candy++;
-  candyCounter.innerHTML = candy.toString();
+  candyCounter.innerHTML = candy.toFixed(1);
 }
 
 function buyLollipop() {
   if (candy >= 100) {
     candy -= 100;
-    candyCounter.innerHTML = candy.toString();
+    candyCounter.innerHTML = candy.toFixed(1);
     lollipop++;
     lollipopCounter.innerHTML += lollipopIcon;
     speed += 1;
@@ -39,7 +39,7 @@ function buyLollipop() {
 
 function candysPerSecond() {
   candy += lollipop / 10;
-  candyCounter.innerHTML = candy.toString();
+  candyCounter.innerHTML = candy.toFixed(1);
 }
 
 function candyRain() {
