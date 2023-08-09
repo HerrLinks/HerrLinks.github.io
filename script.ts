@@ -18,26 +18,31 @@ const lollipopIcon = '🍭';
 
 let candy: number = 0;
 let lollipop: number = 0;
+let speed: number = 0;
 let candyRainActive: boolean = false;
 
 function createCandy() {
   candy += 1;
+  render();
 }
 
 function buyLollipop() {
   if (candy >= 100) {
     candy -= 100;
     lollipop += 1;
+    render();
   }
+}
+function render() {
+  lollipopCounter.innerHTML += lollipopIcon.repeat(lollipop);
+  candyCounter.innerHTML = candy.toFixed(1);
+  speedCounter.innerHTML = speed.toString();
 }
 
 function candysPerSecond() {
-  let speed: number = lollipop / 10;
-  
+  speed = lollipop / 10;
   candy += speed;
-  lollipopCounter.innerHTML = lollipopIcon.repeat(lollipop);
-  candyCounter.innerHTML = candy.toFixed(1);
-  speedCounter.innerHTML = speed.toString();
+  render();
 }
 
 function candyRain() {
