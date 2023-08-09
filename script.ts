@@ -14,8 +14,6 @@ const lollipopCounter = document.querySelector('.lollypops') as HTMLElement;
 const speedCounter = document.querySelector('.speed') as HTMLElement;
 const candyRainButton = document.querySelector('.candy-rain') as HTMLElement;
 
-const lollipopIcon = '🍭';
-
 let candy: number = 0;
 let lollipop: number = 0;
 let speed: number = 0;
@@ -34,8 +32,8 @@ function buyLollipop() {
   }
 }
 function render() {
-  lollipopCounter.innerHTML += lollipopIcon.repeat(lollipop);
   candyCounter.innerHTML = candy.toFixed(1);
+  lollipopCounter.innerHTML = lollipop.toString();
   speedCounter.innerHTML = speed.toString();
 }
 
