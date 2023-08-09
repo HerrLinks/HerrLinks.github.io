@@ -23,3 +23,13 @@ function createCandy() {
   candy++;
   candyCounter.innerHTML = candy.toString();
 }
+
+function buyLollipop() {
+  if (candy >= 100) {
+    candy -= 100;
+    candyCounter.innerHTML = candy.toString();
+    lollipopCounter.innerHTML += lollipop;
+    speed += 1;
+    speedCounter.innerHTML = speed.toString();
+  }
+}
