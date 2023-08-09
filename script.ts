@@ -37,3 +37,12 @@ function buyLollipop() {
 }
 
 buyLollipopButton.addEventListener('click', buyLollipop);
+
+function candysPerSecond() {
+  if (lollipopCounter.innerHTML.length >= 10) {
+    candy += 1;
+    candyCounter.innerHTML = candy.toString();
+  }
+}
+
+setInterval(candysPerSecond, 1000);
