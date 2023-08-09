@@ -45,7 +45,11 @@ function candysPerSecond() {
 function candyRain() {
   if (candyRainActive === false) {
     candyRainActive = true;
-    setInterval(createCandy, 100);
+    const interval = setInterval(createCandy, 100);
+    setTimeout(() => {
+      clearInterval(interval);
+      candyRainActive = false;
+    }, 3000);
   }
 }
 
