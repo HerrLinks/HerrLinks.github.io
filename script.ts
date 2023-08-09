@@ -24,8 +24,6 @@ function createCandy() {
   candyCounter.innerHTML = candy.toString();
 }
 
-createCandyButton.addEventListener('click', createCandy);
-
 function buyLollipop() {
   if (candy >= 100) {
     candy -= 100;
@@ -36,16 +34,12 @@ function buyLollipop() {
   }
 }
 
-buyLollipopButton.addEventListener('click', buyLollipop);
-
 function candysPerSecond() {
   if (lollipopCounter.innerHTML.length >= 10) {
     candy += 1;
     candyCounter.innerHTML = candy.toString();
   }
 }
-
-setInterval(candysPerSecond, 1000);
 
 function candyRain() {
   if (candyRainActive === false) {
@@ -54,4 +48,9 @@ function candyRain() {
   }
 }
 
+setInterval(candysPerSecond, 1000);
+
+createCandyButton.addEventListener('click', createCandy);
+buyLollipopButton.addEventListener('click', buyLollipop);
 candyRainButton.addEventListener('click', candyRain);
+
